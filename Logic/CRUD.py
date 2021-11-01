@@ -12,6 +12,10 @@ def adauga_obiect(id, nume, descriere, pret, locatie, lista):
     :param lista: lista de obiecte
     :return: o lista continand atat elementele vechi, cat si noul obiect
     '''
+    if get_by_id(id, lista) is not None :
+        raise ValueError("Id-ul exista deja!")
+    if len(locatie) != 4:
+        raise ValueError("Locatria trebuie sa fie formata din exact 4 caractere")
     obiect = creeaza_obiect(id, nume, descriere, pret, locatie)
     return lista + [obiect]
 
