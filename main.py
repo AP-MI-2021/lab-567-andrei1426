@@ -7,6 +7,6 @@ from UI.command_line_console import main_line
 def main():
     run_all_tests()
     lista = []
-    main_line(lista)
+    run_menu(lista)
 
 main()

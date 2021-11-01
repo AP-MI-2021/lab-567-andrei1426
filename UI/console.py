@@ -14,13 +14,16 @@ def printMenu():
 
 
 def ui_adauga_obiect(lista):
-    id = input("Dati id-ul: ")
-    nume = input("Dati numele: ")
-    descriere = input("Dati descrierea: ")
-    pret = float(input('Dati pretul: '))
-    locatie = input("Dati locatia: ")
-    return adauga_obiect(id, nume, descriere, pret, locatie, lista)
-
+    try:
+        id = input("Dati id-ul: ")
+        nume = input("Dati numele: ")
+        descriere = input("Dati descrierea: ")
+        pret = float(input('Dati pretul: '))
+        locatie = input("Dati locatia: ")
+        return adauga_obiect(id, nume, descriere, pret, locatie, lista)
+    except ValueError as ve:
+        print("Eroare: {}".format(ve))
+        return lista
 
 def ui_sterge_obiect(lista):
     id = input("Dati id-ul obiectului de sters: ")

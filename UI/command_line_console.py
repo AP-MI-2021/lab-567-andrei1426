@@ -23,7 +23,10 @@ def main_line(lista):
                 for optiune in optiuni:
                     elemente = optiune.split(",")
                     if(elemente[0] == "add"):
-                        lista = adauga_obiect(elemente[1], elemente[2], elemente[3], elemente[4], elemente[5],lista)
+                        try:
+                         lista = adauga_obiect(elemente[1], elemente[2], elemente[3], elemente[4], elemente[5],lista)
+                        except ValueError as ve:
+                         print("Eroare: {}".format(ve))
                     elif elemente[0] == "showall" :
                         showAll(lista)
                     elif elemente[0] == "update" :
