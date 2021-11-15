@@ -98,25 +98,25 @@ def test_undoredo():
         undo_list.append(lista)
         lista = redo_list.pop()
     assert len(lista) == 2
-
+#17
     redo_list.append(lista)
     lista = undo_list.pop()
     assert len(lista) == 1
     assert get_by_id("1", lista) is not None
     assert get_by_id("4", lista) is None
-
+#18
     redo_list.append(lista)
     lista = undo_list.pop()
     assert len(lista) == 0
     assert get_by_id("1", lista) is None
-
+#19
     undo_list.append(lista)
     lista = redo_list.pop()
 
     undo_list.append(lista)
     lista = redo_list.pop()
     assert len(lista) == 2
-
+#20
     if len(redo_list) > 0:
         undo_list.append(lista)
         lista = redo_list.pop()
