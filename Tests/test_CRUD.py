@@ -25,10 +25,6 @@ def test_sterge_obiect():
     assert get_by_id("1", lista) is None
     assert get_by_id("2", lista) is not None
 
-    lista = sterge_obiect("3", lista)
-
-    assert len(lista) == 1
-    assert get_by_id("2", lista) is not None
 
 
 def test_modifica_obiect():

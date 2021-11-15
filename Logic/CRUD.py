@@ -14,6 +14,14 @@ def adauga_obiect(id, nume, descriere, pret, locatie, lista):
     '''
     if get_by_id(id, lista) is not None :
         raise ValueError("Id-ul exista deja!")
+    if len(id) <1:
+        raise ValueError("Nu exista id!")
+    if len(nume) <1:
+        raise ValueError("Nu exista nume!")
+    if len(descriere) <1:
+        raise ValueError("Nu exista descriere!")
+    if pret<0:
+        raise ValueError("Pretul este negativ!")
     if len(locatie) != 4:
         raise ValueError("Locatria trebuie sa fie formata din exact 4 caractere")
     obiect = creeaza_obiect(id, nume, descriere, pret, locatie)
@@ -40,6 +48,8 @@ def sterge_obiect(id, lista):
     :param lista: lista de obiecte
     :return: o lista de obiecte fara elementul cu id-ul dat
     """
+    if get_by_id(id, lista) is None :
+        raise ValueError("Obiectul nu exista !")
     return [obiect for obiect in lista if get_id(obiect) != id]
 
 
@@ -54,6 +64,8 @@ def modifica_obiect(id, nume, descriere, pret, locatie, lista):
     :param lista: O lista de obiecte.
     :return: lista modificata.
     """
+    if get_by_id(id, lista) is None :
+        raise ValueError("Obiectul nu exista!")
     lista_noua = []
     for obiect in lista:
         if get_id(obiect) == id:

@@ -47,3 +47,53 @@ def schimbare_descriere_dupa_pret(pret_comparat, str_concat, lista):
         else:
             lista_noua.append(obiect)
     return lista_noua
+
+
+def max_pret_fiecare_locatie(lista):
+    """
+    determina cel mai mare pret pr fiecare locatie din lista
+    Args:
+        lista: lista din care determinam preturile cele mai mari pt fiecare locatie
+
+    Returns: un dictionare care cintine preturile maxime pt fiecare locatie din lista
+
+    """
+    rezultat={}
+    for obiect in lista:
+        locatie=get_locatie(obiect)
+        pret=get_pret(obiect)
+        if locatie not in rezultat or pret>rezultat[locatie]:
+            rezultat[locatie] = pret
+    return rezultat
+
+
+def sum_pret_fiecare_locatie(lista):
+    """
+    determina suma preturilor pt fiecare locatie  din lista
+    Args:
+        lista: lista din care determinam suma pt fiecare locatie
+
+    Returns: un dictionare care contine suma preturilor pt fiecare locatie din lista
+
+    """
+    rezultat={}
+    for obiect in lista:
+        locatie=get_locatie(obiect)
+        pret=get_pret(obiect)
+        if locatie not in rezultat:
+            rezultat[locatie]=pret
+        else:
+            rezultat[locatie] += pret
+    return rezultat
+
+
+def sortare_dupa_pret(lista):
+    """
+    sorteaza lista dupa pret
+    Args:
+        lista: lista data
+
+    Returns: lista sortata
+
+    """
+    return sorted(lista, key=lambda obiect: get_pret(obiect))

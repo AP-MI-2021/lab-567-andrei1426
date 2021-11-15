@@ -1,6 +1,6 @@
 from Tests.test_CRUD import test_adauga_obiect, test_sterge_obiect, test_modifica_obiect
 from Tests.test_domain import test_obiect
-from Tests.test_functionalitati import test_schimbare_locatie, test_schimbare_descriere_dupa_pret
+from Tests.test_functionalitati import test_schimbare_locatie, test_schimbare_descriere_dupa_pret,test_max_pret_fiecare_locatie,test_sum_pret_fiecare_locatie,test_undo_redo
 
 def run_all_tests():
     test_obiect()
@@ -9,3 +9,6 @@ def run_all_tests():
     test_modifica_obiect()
     test_schimbare_locatie()
     test_schimbare_descriere_dupa_pret()
+    test_max_pret_fiecare_locatie()
+    test_sum_pret_fiecare_locatie()
+    test_undo_redo
